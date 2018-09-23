@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -11,6 +12,7 @@ import {Keyboard} from '@ionic-native/keyboard';
 import {ActivityService} from "../services/activity-service";
 import {TripService} from "../services/trip-service";
 import {WeatherProvider} from "../services/weather";
+import { AuthserviceProvider } from '../providers/authservice/authservice';
 
 import {MyApp} from "./app.component";
 
@@ -25,6 +27,8 @@ import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {KehadiranPage} from "../pages/kehadiran/kehadiran";
 import {JadualPage} from "../pages/jadual/jadual";
+import {SubjekKelasPage} from "../pages/subjek-kelas/subjek-kelas";
+import {PelajarPage} from "../pages/pelajar/pelajar";
 // import services
 // end import services
 // end import services
@@ -45,11 +49,13 @@ import {JadualPage} from "../pages/jadual/jadual";
     TripDetailPage,
     TripsPage,
     KehadiranPage,
-    JadualPage
+    JadualPage,
+    SubjekKelasPage,
+    PelajarPage
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
@@ -73,7 +79,9 @@ import {JadualPage} from "../pages/jadual/jadual";
     TripDetailPage,
     TripsPage,
     KehadiranPage,
-    JadualPage
+    JadualPage,
+    SubjekKelasPage,
+    PelajarPage
   ],
   providers: [
     StatusBar,

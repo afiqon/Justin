@@ -9,6 +9,9 @@ import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { KehadiranPage } from "../pages/kehadiran/kehadiran";
 import { JadualPage} from "../pages/jadual/jadual";
+import { SubjekKelasPage} from "../pages/subjek-kelas/subjek-kelas";
+import { PelajarPage} from "../pages/pelajar/pelajar";
+
 
 export interface MenuItem {
     title: string;
@@ -38,6 +41,8 @@ export class MyApp {
     this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
       {title: 'kehadiran', component: KehadiranPage, icon: 'list'},
+      {title: 'subjek-kelas', component: SubjekKelasPage, icon: 'ice-cream'},
+      {title: 'pelajar', component: PelajarPage, icon: 'infinite'},
       {title: 'jadual', component: JadualPage, icon: 'heart'}
     ];
   }
