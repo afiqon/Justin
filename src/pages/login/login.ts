@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
 import {HomePage} from "../home/home";
-import {RegisterPage} from "../register/register";
+
 
 @Component({
   selector: 'page-login',
@@ -13,14 +13,10 @@ export class LoginPage {
     this.menu.swipeEnable(false);
   }
 
-  // go to register page
-  register() {
-    this.nav.setRoot(RegisterPage);
-  }
-
+  
   // login and go to home page
   login() {
-    this.nav.setRoot(HomePage);
+    this.nav.setRoot(HomePage)
   }
 
   forgotPass() {

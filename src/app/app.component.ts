@@ -11,6 +11,7 @@ import { KehadiranPage } from "../pages/kehadiran/kehadiran";
 import { JadualPage} from "../pages/jadual/jadual";
 import { SubjekKelasPage} from "../pages/subjek-kelas/subjek-kelas";
 import { PelajarPage} from "../pages/pelajar/pelajar";
+import { EditPage} from "../pages/edit/edit";
 
 
 export interface MenuItem {
@@ -72,6 +73,10 @@ export class MyApp {
 
   logout() {
     this.nav.setRoot(LoginPage);
+  }
+
+  editprofile() {
+    this.nav.setRoot(EditPage);
   }
 
 }

@@ -21,7 +21,6 @@ import {CheckoutTripPage} from "../pages/checkout-trip/checkout-trip";
 import {HomePage} from "../pages/home/home";
 import {LoginPage} from "../pages/login/login";
 import {NotificationsPage} from "../pages/notifications/notifications";
-import {RegisterPage} from "../pages/register/register";
 import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
@@ -29,6 +28,7 @@ import {KehadiranPage} from "../pages/kehadiran/kehadiran";
 import {JadualPage} from "../pages/jadual/jadual";
 import {SubjekKelasPage} from "../pages/subjek-kelas/subjek-kelas";
 import {PelajarPage} from "../pages/pelajar/pelajar";
+import { EditPage } from '../pages/edit/edit';
 // import services
 // end import services
 // end import services
@@ -44,14 +44,14 @@ import {PelajarPage} from "../pages/pelajar/pelajar";
     HomePage,
     LoginPage,
     NotificationsPage,
-    RegisterPage,
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
     KehadiranPage,
     JadualPage,
     SubjekKelasPage,
-    PelajarPage
+    PelajarPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -74,14 +74,14 @@ import {PelajarPage} from "../pages/pelajar/pelajar";
     HomePage,
     LoginPage,
     NotificationsPage,
-    RegisterPage,
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
     KehadiranPage,
     JadualPage,
     SubjekKelasPage,
-    PelajarPage
+    PelajarPage,
+    EditPage
   ],
   providers: [
     StatusBar,
