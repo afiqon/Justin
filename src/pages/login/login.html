@@ -14,10 +14,10 @@
     <form class="list-form">
       <ion-item>
         <ion-label floating>
-          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          <ion-icon name="email" item-start class="text-primary"></ion-icon>
           Email
         </ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="text" [(ngModel)]="userData.email" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -25,7 +25,7 @@
           <ion-icon name="lock" item-start class="text-primary"></ion-icon>
           Password
         </ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="userData.password" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
     </form>
 

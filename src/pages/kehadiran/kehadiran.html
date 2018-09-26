@@ -17,36 +17,33 @@
           <ion-list>
             <ion-item>
               <ion-label>Sesi Kemasukan</ion-label>
-              <ion-select [(ngModel)]="SesiKemasukan">
-                <ion-option value="1/2015">1/2015</ion-option>
-                <ion-option value="2/2015">2/2015</ion-option>
-                <ion-option value="1/2018">1/2018</ion-option>
-                <ion-option value="2/2018">2/2018</ion-option>
+              <ion-select (ionChange)="setSession(data)" [(ngModel)]="data" >
+                <div *ngFor="let session of sessions">
+                    <ion-option value="{{session.ids}}">{{session.sesi}}</ion-option>
+                </div>
+                
               </ion-select>
             </ion-item>
           </ion-list>
     
     <ion-list>
-      <ion-item>
+      <ion-item *ngIf="classes">
         <ion-label>Kelas</ion-label>
-        <ion-select [(ngModel)]="Kelas">
-          <ion-option value="1">KELAS 1</ion-option>
-          <ion-option value="2">KELAS 2</ion-option>
-          <ion-option value="3">KELAS 3</ion-option>
-          <ion-option value="4">KELAS 4</ion-option>
+        <ion-select (ionChange)="setClass(Kelas)" [(ngModel)]="Kelas">
+          <div *ngFor="let class of classes">
+            <ion-option value="{{class.kelas}}">{{class.kelas}}</ion-option>
+          </div>
         </ion-select>
       </ion-item>
     </ion-list>
     
     <ion-list>
-        <ion-item>
+        <ion-item *ngIf="days">
           <ion-label>Hari</ion-label>
-          <ion-select [(ngModel)]="Hari">
-            <ion-option value="Isnin">Isnin</ion-option>
-            <ion-option value="Selasa">Selasa</ion-option>
-            <ion-option value="Rabu">Rabu</ion-option>
-            <ion-option value="Khamis">Khamis</ion-option>
-            <ion-option value="Jumaat">Jumaat</ion-option>
+          <ion-select (ionChange)="setDay(Hari)"  [(ngModel)]="Hari">
+            <div *ngFor="let day of days">
+              <ion-option value="{{day.hari}}">{{day.hari}}</ion-option>
+            </div>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -54,14 +51,10 @@
     <ion-list>
         <ion-item>
           <ion-label>Slot</ion-label>
-          <ion-select [(ngModel)]="Slot">
-            <ion-option value="1">1</ion-option>
-            <ion-option value="2">2</ion-option>
-            <ion-option value="3">3</ion-option>
-            <ion-option value="4">4</ion-option>
-            <ion-option value="5">5</ion-option>
-            <ion-option value="6">6</ion-option>
-            <ion-option value="7">7</ion-option>
+          <ion-select (ionChange)="setSlot(Slot)" [(ngModel)]="Slot">
+            <div *ngFor="let slot of slots">
+              <ion-option value="{{slot.slot}}">{{slot.slot}}</ion-option>
+            </div>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -69,18 +62,18 @@
     
       <ion-item>
         <ion-label>Date</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY h.mmA" [(ngModel)]="myDate">
-          <ion-datetime displayFormat="HH/MM/AA" [(ngModel)]="myDate"></ion-datetime>
-        </ion-datetime>
+        <ion-datetime (ionChange)="setDate(myDate)"  displayFormat="YYYY/MM/DD" [(ngModel)]="myDate"></ion-datetime>
+          <!-- <ion-datetime displayFormat="HH/MM/AA" [(ngModel)]="myDate"></ion-datetime> -->
+       
       </ion-item>
     
-    
-      <ion-item>
-          <ion-label>Justin</ion-label>
-          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+      <div *ngFor="let student of students">
+        <ion-item> 
+            <ion-label>{{student.nama_pelajar}}</ion-label>
+            <ion-checkbox (click)="selectMember(student)" [(ngModel)]="student.checked"></ion-checkbox>
         </ion-item>
-        
-        <ion-item>
+      </div> 
+        <!-- <ion-item>
             <ion-label>Ikhmal</ion-label>
             <ion-checkbox color="dark" checked="true"></ion-checkbox>
           </ion-item>
@@ -88,9 +81,9 @@
           <ion-item>
               <ion-label>Syafiqah</ion-label>
               <ion-checkbox color="dark" checked="true"></ion-checkbox>
-            </ion-item>
+            </ion-item> -->
     
   
-        <button ion-button color="secondary" round>Hantar</button>
+        <button ion-button color="secondary" round (click)="submitAttendance()">Hantar</button>
        
     </ion-content>

@@ -19,8 +19,10 @@ export class HomePage {
     name: "Rio de Janeiro, Brazil",
     date: new Date().toISOString()
   }
-
+  username:any;
   constructor(private storage: Storage, public nav: NavController, public popoverCtrl: PopoverController) {
+    this.username = JSON.parse(window.localStorage.getItem('userData'));
+    // console.log('username ',this.username);
   }
 
   ionViewWillEnter() {

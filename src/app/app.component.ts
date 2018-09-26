@@ -72,6 +72,7 @@ export class MyApp {
   }
 
   logout() {
+    window.localStorage.removeItem('userData');
     this.nav.setRoot(LoginPage);
   }
 

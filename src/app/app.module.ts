@@ -90,6 +90,7 @@ import { EditPage } from '../pages/edit/edit';
     ActivityService,
     TripService,
     WeatherProvider,
+    AuthserviceProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
